@@ -1,9 +1,11 @@
 import React from 'react';
+import {AiOutlineMenu} from "react-icons/ai";
+
 function Navbar(){
     return (
         <div className="flex justify-between px-6 py-2">
             <div className="border border-black">
-                1
+                <AiOutlineMenu/>
             </div>
             <div className="border border-black">
                 2
@@ -14,4 +16,4 @@ function Navbar(){
         </div>
     )
 }
-export default Navbar
+export default Navbar;
