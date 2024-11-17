@@ -43,8 +43,41 @@ function Sidebar(){
         icon: <MdOutlineSubscriptions />,
       },
     ];
+    const sidebarItems2 = [
+        {
+          id: 1,
+          name: "Your Channel",
+          icon: <PiUserSquareThin />,
+        },
+        {
+          id: 2,
+          name: "History",
+          icon: <MdHistory />,
+        },
+        {
+          id: 3,
+          name: "Playlists",
+          icon: <MdOutlineSubscriptions />,
+        },
+        {
+          id: 4,
+          name: "Your Videos",
+          icon: <BiVideo />,
+        },
+        {
+          id: 5,
+          name: "Watch later",
+          icon: <MdOutlineWatchLater />,
+        },
+        {
+          id: 6,
+          name: "Liked videos",
+          icon: <AiOutlineLike />,
+        },
+      ];
     return(
         <div className="px-6 w-[15%]">
+        {/* Home */}
             <div className="space-y-3 items-center">
                 {sidebarItems.map((item)=>{
                     return (
@@ -55,6 +88,21 @@ function Sidebar(){
                     );
                 })}
             </div>
+            <br/>
+            <hr/>
+            {/* you */}
+            <div className="space-y-3 items-center">
+                {sidebarItems2.map((item)=>{
+                    return (
+                        <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+                            <div className="text-xl cursor-pointer">{item.icon}</div>
+                            <span className="cursor-pointer">{item.name}</span>
+                        </div>
+                    );
+                })}
+            </div>
+            <br/>
+            <hr/>
         </div>
     )
 }
