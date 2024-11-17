@@ -24,87 +24,185 @@ import { MdPodcasts } from "react-icons/md";
 import { BiVideo } from "react-icons/bi";
 import { GiLinkedRings } from "react-icons/gi";
 
-function Sidebar(){
-
-    const sidebarItems = [
-      {
-        id: 1,
-        name: "Home",
-        icon: <GoHome />,
-      },
-      {
-        id: 2,
-        name: "Shorts",
-        icon: <SiYoutubeshorts />,
-      },
-      {
-        id: 3,
-        name: "Subscriptions",
-        icon: <MdOutlineSubscriptions />,
-      },
-    ];
-    const sidebarItems2 = [
-        {
-          id: 1,
-          name: "Your Channel",
-          icon: <PiUserSquareThin />,
-        },
-        {
-          id: 2,
-          name: "History",
-          icon: <MdHistory />,
-        },
-        {
-          id: 3,
-          name: "Playlists",
-          icon: <MdOutlineSubscriptions />,
-        },
-        {
-          id: 4,
-          name: "Your Videos",
-          icon: <BiVideo />,
-        },
-        {
-          id: 5,
-          name: "Watch later",
-          icon: <MdOutlineWatchLater />,
-        },
-        {
-          id: 6,
-          name: "Liked videos",
-          icon: <AiOutlineLike />,
-        },
-      ];
-    return(
-        <div className="px-6 w-[15%]">
-        {/* Home */}
-            <div className="space-y-3 items-center">
-                {sidebarItems.map((item)=>{
-                    return (
-                        <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
-                            <div className="text-xl cursor-pointer">{item.icon}</div>
-                            <span className="cursor-pointer">{item.name}</span>
-                        </div>
-                    );
-                })}
+function Sidebar() {
+  const sidebarItems = [
+    {
+      id: 1,
+      name: "Home",
+      icon: <GoHome />,
+    },
+    {
+      id: 2,
+      name: "Shorts",
+      icon: <SiYoutubeshorts />,
+    },
+    {
+      id: 3,
+      name: "Subscriptions",
+      icon: <MdOutlineSubscriptions />,
+    },
+  ];
+  const sidebarItems2 = [
+    {
+      id: 1,
+      name: "Your Channel",
+      icon: <PiUserSquareThin />,
+    },
+    {
+      id: 2,
+      name: "History",
+      icon: <MdHistory />,
+    },
+    {
+      id: 3,
+      name: "Playlists",
+      icon: <MdOutlineSubscriptions />,
+    },
+    {
+      id: 4,
+      name: "Your Videos",
+      icon: <BiVideo />,
+    },
+    {
+      id: 5,
+      name: "Watch later",
+      icon: <MdOutlineWatchLater />,
+    },
+    {
+      id: 6,
+      name: "Liked videos",
+      icon: <AiOutlineLike />,
+    },
+  ];
+  const sidebarItems3 = [
+    {
+      id: 1,
+      name: "Trending",
+      icon: <SiTrendmicro />,
+    },
+    {
+      id: 2,
+      name: "Shopping",
+      icon: <HiOutlineShoppingBag />,
+    },
+    {
+      id: 3,
+      name: "Music",
+      icon: <SiYoutubemusic />,
+    },
+    {
+      id: 4,
+      name: "Films",
+      icon: <PiFilmSlateLight />,
+    },
+    {
+      id: 5,
+      name: "Live",
+      icon: <CgMediaLive />,
+    },
+    {
+      id: 6,
+      name: "Gaming",
+      icon: <IoGameControllerOutline />,
+    },
+    {
+      id: 7,
+      name: "News",
+      icon: <FaRegNewspaper />,
+    },
+    {
+      id: 8,
+      name: "Sport",
+      icon: <TfiCup />,
+    },
+    {
+      id: 9,
+      name: "Courses",
+      icon: <SiStylelint />,
+    },
+    {
+      id: 10,
+      name: "Fashion & beauty",
+      icon: <PiLightbulbLight />,
+    },
+    {
+      id: 11,
+      name: "Padcasts",
+      icon: <MdPodcasts />,
+    },
+  ];
+  const sidebarItems4 = [
+    {
+      id: 1,
+      name: "Youtube Premium",
+      icon: <FaYoutube />,
+    },
+    {
+      id: 2,
+      name: "Youtube Studio",
+      icon: <SiYoutubestudio />,
+    },
+    {
+      id: 3,
+      name: "Youtube Music",
+      icon: <SiYoutubemusic />,
+    },
+    {
+      id: 4,
+      name: "Youtube Kids",
+      icon: <SiYoutubekids />,
+    },
+  ];
+  return (
+    <div className="px-6 w-[15%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden mt-16">
+      {/* Home */}
+      <div className="space-y-3 items-center">
+        {sidebarItems.map((item) => {
+          return (
+            <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+              <div className="text-xl cursor-pointer">{item.icon}</div>
+              <span className="cursor-pointer">{item.name}</span>
             </div>
-            <br/>
-            <hr/>
-            {/* you */}
-            <div className="space-y-3 items-center">
-                {sidebarItems2.map((item)=>{
-                    return (
-                        <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
-                            <div className="text-xl cursor-pointer">{item.icon}</div>
-                            <span className="cursor-pointer">{item.name}</span>
-                        </div>
-                    );
-                })}
-            </div>
-            <br/>
-            <hr/>
+          );
+        })}
+      </div>
+      <br />
+      <hr />
+      {/* you */}
+      <div className="mt-4 space-y-3 items-center">
+        <div className="flex items-center space-x-2">
+          <h1>You</h1>
+          <FaChevronRight />
         </div>
-    )
+        {sidebarItems2.map((item) => {
+          return (
+            <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+              <div className="text-xl cursor-pointer">{item.icon}</div>
+              <span className="cursor-pointer">{item.name}</span>
+            </div>
+          );
+        })}
+      </div>
+      <br />
+      <hr />
+      {/* Explore */}
+      <div className="mt-4 space-y-3 items-center">
+        <div className="items-center space-x-2">
+          <h1 className="font-semibold">Explore</h1>
+        </div>
+        {sidebarItems3.map((item) => {
+          return (
+            <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+              <div className="text-xl cursor-pointer">{item.icon}</div>
+              <span className="cursor-pointer">{item.name}</span>
+            </div>
+          );
+        })}
+      </div>
+      <br />
+      <hr />
+    </div>
+  );
 }
 
 export default Sidebar;
