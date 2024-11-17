@@ -154,12 +154,15 @@ function Sidebar() {
     },
   ];
   return (
-    <div className="px-6 w-[15%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden mt-16">
+    <div className="px-6 w-[17%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden mt-16">
       {/* Home */}
-      <div className="space-y-3 items-center">
+      <div className=" space-y-3 items-center">
         {sidebarItems.map((item) => {
           return (
-            <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+            <div
+              key={item.id}
+              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
+            >
               <div className="text-xl cursor-pointer">{item.icon}</div>
               <span className="cursor-pointer">{item.name}</span>
             </div>
@@ -168,7 +171,7 @@ function Sidebar() {
       </div>
       <br />
       <hr />
-      {/* you */}
+      {/* You */}
       <div className="mt-4 space-y-3 items-center">
         <div className="flex items-center space-x-2">
           <h1>You</h1>
@@ -176,7 +179,10 @@ function Sidebar() {
         </div>
         {sidebarItems2.map((item) => {
           return (
-            <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+            <div
+              key={item.id}
+              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
+            >
               <div className="text-xl cursor-pointer">{item.icon}</div>
               <span className="cursor-pointer">{item.name}</span>
             </div>
@@ -188,11 +194,14 @@ function Sidebar() {
       {/* Explore */}
       <div className="mt-4 space-y-3 items-center">
         <div className="items-center space-x-2">
-          <h1 className="font-semibold">Explore</h1>
+          <h1 className=" font-semibold">Explore</h1>
         </div>
         {sidebarItems3.map((item) => {
           return (
-            <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+            <div
+              key={item.id}
+              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
+            >
               <div className="text-xl cursor-pointer">{item.icon}</div>
               <span className="cursor-pointer">{item.name}</span>
             </div>
@@ -201,6 +210,35 @@ function Sidebar() {
       </div>
       <br />
       <hr />
+      {/* More section */}
+      <div className="mt-4 space-y-3 items-center">
+        <div className="items-center space-x-2">
+          <h1 className=" font-semibold">More From Youtube</h1>
+        </div>
+        {sidebarItems4.map((item) => {
+          return (
+            <div
+              key={item.id}
+              className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1"
+            >
+              <div className="text-xl cursor-pointer text-red-500">
+                {item.icon}
+              </div>
+              <span className="cursor-pointer">{item.name}</span>
+            </div>
+          );
+        })}
+        <hr />
+      </div>
+      <br />
+      <span className="text-xs text-gray-600 font-semibold">
+        About Press Copyright <br /> Contact us Creators <br /> Advertise
+        Developers <br />
+        <p className="mt-3">Terms Privacy Policy & Safety</p> How YouTube works{" "}
+        <br /> Test new features
+      </span>
+      <br />
+      <p className="text-xs text-gray-500 mt-3">© 2024 Learn Coding</p>
     </div>
   );
 }
