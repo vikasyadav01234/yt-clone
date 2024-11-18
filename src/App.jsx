@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import Navbar from './components/Navbar.jsx';
 import PlayingVideo from './components/PlayingVideo.jsx';
