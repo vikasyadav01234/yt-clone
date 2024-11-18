@@ -1,6 +1,7 @@
 import React from "react";
-
-function Time() {
+import moment from 'moment';
+function Time({time}) {
+  const videoTime=moment()?.startOf("day")?.seconds(time)?.format("H:mm:ss")
   return (
     <div>Time</div>
   )
