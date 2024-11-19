@@ -1,32 +1,30 @@
-import { createContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { fetchData } from "../utils/rapidapi";
-import { useState } from "react";
-import { useEffect } from "react";
-import { useContext } from "react";
-export const AuthContext = createContext()
 
-export default function AuthProvider({children}){
-    const [loading,setLoading]=useState(false)
-    const [data,setData]= useState([])
-    const [value,setValue] = useState("New")
+export const AuthContext = createContext();
 
-    useEffect(()=>{
-        fetchAlldata(value)
-    },[value])
+export default function AuthProvider({ children }) {
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState([]);
+  const [value, setValue] = useState("New");
 
-    const fetchAlldata=(query)=>{
-        setLoading(true)
-        fetchData(`search/?=${query}`).then((contents)=>{
-            setData(contents)
-            setLoading(false)
-        })
-    }
+  useEffect(() => {
+    fetchAlldata(value);
+  }, [value]);
 
-    return(
-        <AuthContext.Provider value={{loading,data,value,setValue}}>
-        {children}
-        </AuthContext.Provider>
-    )
+  const fetchAlldata = (query) => {
+    setLoading(true);
+    fetchData(`search/?q=${query}`).then(({ contents }) => {
+      console.log(contents);
+      setData(contents);
+      setLoading(false);
+    });
+  };
+  return (
+    <AuthContext.Provider value={{ loading, data, value, setValue }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
-export const useAuth = ()=>useContext(AuthContext)
+export const useAuth = () => useContext(AuthContext);

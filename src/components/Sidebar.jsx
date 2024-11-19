@@ -23,7 +23,6 @@ import { SiStylelint } from "react-icons/si";
 import { MdPodcasts } from "react-icons/md";
 import { BiVideo } from "react-icons/bi";
 import { GiLinkedRings } from "react-icons/gi";
-
 function Sidebar() {
   const sidebarItems = [
     {
@@ -154,7 +153,7 @@ function Sidebar() {
     },
   ];
   return (
-    <div className="px-6 w-[17%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden mt-16">
+    <div className="px-6 w-[17%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden ">
       {/* Home */}
       <div className=" space-y-3 items-center">
         {sidebarItems.map((item) => {
@@ -238,9 +237,9 @@ function Sidebar() {
         <br /> Test new features
       </span>
       <br />
-      <p className="text-xs text-gray-500 mt-3">© 2024 Vikas</p>
+      <p className="text-xs text-gray-500 mt-3">© 2024 Learn Coding</p>
     </div>
   );
-} 
+}
 
 export default Sidebar;
